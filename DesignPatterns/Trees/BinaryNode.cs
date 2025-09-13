@@ -2,17 +2,17 @@ namespace DesignPatterns.Trees
 {
     public class BinaryNode
     {
-        public int Value {get; set;}
-        public BinaryNode Left {get; set;}
-        public BinaryNode Right {get; set;}
+        public int Value { get; set; }
+        public BinaryNode Left { get; set; }
+        public BinaryNode Right { get; set; }
 
         public BinaryNode(int value)
         {
             Value = value;
         }
-
-
-        public class RunBinaryNode
+    }
+    
+    public class RunBinaryNode
         {
             public static void Run()
             {
@@ -27,7 +27,7 @@ namespace DesignPatterns.Trees
 
             }
 
-            public static void Preorder(BinaryNode node)
+            private static void Preorder(BinaryNode node)
             {
                 if(node==null) return;
                 Console.WriteLine(node.Value);
@@ -35,5 +35,4 @@ namespace DesignPatterns.Trees
                 Preorder(node.Right);
             }
         }
-    }
 }
