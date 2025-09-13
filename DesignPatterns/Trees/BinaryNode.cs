@@ -52,6 +52,20 @@ namespace DesignPatterns.Trees
             Postorder(node.Right);
             Console.WriteLine(node.Value + " ");
         }
+
+        private static void LevelOrder(BinaryNode root)
+        {
+            if (root == null) return;
+            var queue = new Queue<BinaryNode>();
+            queue.Enqueue(root);
+            while (queue.Count > 0)
+            {
+                var cur = queue.Dequeue();
+                Console.WriteLine(cur.Value + " ");
+                if (cur.Left != null) queue.Enqueue(cur.Left);
+                if(cur.Right != null) queue.Enqueue(cur.Right);
+            }
+        }
             
         }
 }
