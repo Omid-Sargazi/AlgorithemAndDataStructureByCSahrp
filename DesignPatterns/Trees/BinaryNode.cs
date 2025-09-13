@@ -23,6 +23,16 @@ namespace DesignPatterns.Trees
                 root.Left.Right = new BinaryNode(5);
                 root.Right.Left = new BinaryNode(6);
 
+                Preorder(root);
+
+            }
+
+            public static void Preorder(BinaryNode node)
+            {
+                if(node==null) return;
+                Console.WriteLine(node.Value);
+                Preorder(node.Left);
+                Preorder(node.Right);
             }
         }
     }
