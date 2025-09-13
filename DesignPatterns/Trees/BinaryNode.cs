@@ -11,28 +11,39 @@ namespace DesignPatterns.Trees
             Value = value;
         }
     }
-    
+
     public class RunBinaryNode
+    {
+        public static void Run()
         {
-            public static void Run()
-            {
-                var root = new BinaryNode(1);
-                root.Left = new BinaryNode(2);
-                root.Right = new BinaryNode(3);
-                root.Left.Left = new BinaryNode(4);
-                root.Left.Right = new BinaryNode(5);
-                root.Right.Left = new BinaryNode(6);
+            var root = new BinaryNode(1);
+            root.Left = new BinaryNode(2);
+            root.Right = new BinaryNode(3);
+            root.Left.Left = new BinaryNode(4);
+            root.Left.Right = new BinaryNode(5);
+            root.Right.Left = new BinaryNode(6);
 
-                Preorder(root);
+            Preorder(root);
+            Console.WriteLine("Inorder Traversal:");
+            Inorder(root);
 
-            }
+        }
 
-            private static void Preorder(BinaryNode node)
-            {
-                if(node==null) return;
-                Console.WriteLine(node.Value);
-                Preorder(node.Left);
-                Preorder(node.Right);
-            }
+        private static void Preorder(BinaryNode node)
+        {
+            if (node == null) return;
+            Console.WriteLine(node.Value);
+            Preorder(node.Left);
+            Preorder(node.Right);
+        }
+
+        private static void Inorder(BinaryNode node)
+        {
+            if (node == null) return;
+            Inorder(node.Left);
+            Console.WriteLine(node.Value+" ");
+            Inorder(node.Right);
+        }   
+            
         }
 }
