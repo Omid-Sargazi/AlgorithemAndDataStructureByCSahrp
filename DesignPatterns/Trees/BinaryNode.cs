@@ -41,9 +41,17 @@ namespace DesignPatterns.Trees
         {
             if (node == null) return;
             Inorder(node.Left);
-            Console.WriteLine(node.Value+" ");
+            Console.WriteLine(node.Value + " ");
             Inorder(node.Right);
-        }   
+        }
+
+        private static void Postorder(BinaryNode node)
+        {
+            if (node == null) return;
+            Postorder(node.Left);
+            Postorder(node.Right);
+            Console.WriteLine(node.Value + " ");
+        }
             
         }
 }
