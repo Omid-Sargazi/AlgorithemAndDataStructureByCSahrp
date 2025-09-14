@@ -14,4 +14,4 @@ var arr2 = new int[] { 1, 2, 3 };
 
 // Sortings.RunMergeSort(arr);
 
-Sortings.RunHeapify(arr2);
+Sortings.RunHeapify(arr);
