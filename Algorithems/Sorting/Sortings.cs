@@ -1,3 +1,5 @@
+using System.Security.AccessControl;
+
 namespace Algorithems.Sorting
 {
     public class Sortings
@@ -154,9 +156,37 @@ namespace Algorithems.Sorting
 
         public static void RunMergeSort(int[] arr)
         {
-             Console.WriteLine($"Original array: {string.Join(",", arr)}");
+            Console.WriteLine($"Original array: {string.Join(",", arr)}");
             var res = MergeSort(arr);
             Console.WriteLine($"Final sorted array: {string.Join(",", res)}");
+        }
+
+        public static void Heapify(int[] arr, int i, int n)
+        {
+            int left = 2 * i + 1;
+            int right = 2 * i + 2;
+            int largest = i;
+            if (left < n && arr[left] > arr[largest])
+            {
+                largest = left;
+            }
+            if (right < n && arr[right] > arr[largest])
+            {
+                largest = right;
+            }
+
+            if (largest != i)
+            {
+                (arr[i], arr[largest]) = (arr[largest], arr[i]);
+                Heapify(arr, largest, n);
+            }
+        }
+
+        public static void RunHeapify(int[] arr)
+        {
+            Console.WriteLine($"Original array: {string.Join(",", arr)}");
+            Heapify(arr,0,arr.Length);
+            Console.WriteLine($"Heapified array: {string.Join(",", arr)}");
         }
         
     }
