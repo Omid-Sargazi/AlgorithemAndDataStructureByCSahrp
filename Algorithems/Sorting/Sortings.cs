@@ -191,10 +191,21 @@ namespace Algorithems.Sorting
             }
         }
 
+        private static void SortHeap(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = n - 1; i >= 0; i--)
+            {
+                (arr[0], arr[i]) = (arr[i], arr[0]);
+                Heapify(arr, 0, i);
+            }
+        }
+
         public static void RunHeapify(int[] arr)
         {
             Console.WriteLine($"Original array: {string.Join(",", arr)}");
             BuildMaxHeap(arr);
+            SortHeap(arr);
             Console.WriteLine($"Heapified array: {string.Join(",", arr)}");
         }
         
