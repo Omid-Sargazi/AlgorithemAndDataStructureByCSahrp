@@ -94,6 +94,70 @@ namespace Algorithems.Sorting
             var res = QuickSort(arr, 0, arr.Length - 1);
             return res;
         }
+
+
+        public static int[] MergeSort(int[] arr)
+        {
+            if (arr.Length <= 1) return arr;
+            int n = arr.Length;
+            int mid = n / 2;
+            int[] left = new int[mid];
+            int[] right = new int[n - mid];
+
+            Array.Copy(arr, 0, left, 0, mid);
+            Array.Copy(arr, mid, right, 0, right.Length);
+            // Console.WriteLine($"Left: {string.Join(",", left)}");
+            // Console.WriteLine($"Right: {string.Join(",", right)}");
+
+            MergeSort(left);
+            MergeSort(right);
+            var res = Merge(arr, left, right);
+            Console.WriteLine($"Merged: {string.Join(",", res)}");
+            return res;
+        }
+
+        private static int[] Merge(int[] result, int[] left, int[] right)
+        {
+            int p1 = 0, p2 = 0, p3 = 0;
+            int n1 = left.Length, n2 = right.Length;
+
+            while (p1 < n1 && p2 < n2)
+            {
+                if (left[p1] < right[p2])
+                {
+                    result[p3] = left[p1];
+                    p1++;
+                }
+                else
+                {
+                    result[p3] = right[p2];
+                    p2++;
+                }
+                p3++;
+            }
+
+            while (p1 < n1)
+            {
+                result[p3] = left[p1];
+                p3++;
+                p1++;
+            }
+            while (p2 < n2)
+            {
+                result[p3] = right[p2];
+                p3++;
+                p2++;
+            }
+
+            return result;
+        }
+
+        public static void RunMergeSort(int[] arr)
+        {
+             Console.WriteLine($"Original array: {string.Join(",", arr)}");
+            var res = MergeSort(arr);
+            Console.WriteLine($"Final sorted array: {string.Join(",", res)}");
+        }
         
     }
 }
