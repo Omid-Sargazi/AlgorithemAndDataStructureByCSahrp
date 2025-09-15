@@ -47,6 +47,27 @@ namespace DataStructures.LINQExamples
             {
                 Console.WriteLine($"Courses: {string.Join(", ", course)}");
             }
+
+            var allUniqueCourses = students
+            .SelectMany(s => s.Courses)
+            .Distinct()
+            .OrderBy(course => course);
+            foreach (var course in allUniqueCourses)
+            {
+                Console.WriteLine($"- {course}");
+            }
+
+            var studentsWithCourses = students
+            .Select(s => new
+            {
+                s.Name,
+                Courses = string.Join(",", s.Courses),
+            });
+
+            foreach (var item in studentsWithCourses)
+            {
+                Console.WriteLine($"{item.Name}: {item.Courses}");
+            }
         }
     }
 
