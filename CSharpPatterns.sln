@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithems", "Algorithems\Algorithems.csproj", "{5B2446CD-2B51-49E8-9F4D-0608685BF8AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpExamples", "CSharpExamples\CSharpExamples.csproj", "{8151290B-3F82-4BED-B268-5C453A508C0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{5B2446CD-2B51-49E8-9F4D-0608685BF8AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B2446CD-2B51-49E8-9F4D-0608685BF8AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B2446CD-2B51-49E8-9F4D-0608685BF8AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8151290B-3F82-4BED-B268-5C453A508C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8151290B-3F82-4BED-B268-5C453A508C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8151290B-3F82-4BED-B268-5C453A508C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8151290B-3F82-4BED-B268-5C453A508C0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
