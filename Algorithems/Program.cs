@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Algorithems.LeetCode;
 using Algorithems.Sorting;
 
 Console.WriteLine("Hello, World!");
@@ -14,4 +15,7 @@ var arr2 = new int[] { 1, 2, 3 };
 
 // Sortings.RunMergeSort(arr);
 
-Sortings.RunHeapify(arr);
+// Sortings.RunHeapify(arr);
+var nums = new int[] { 4, 5, 6, 7, 0, 1, 2,3 };
+
+Console.WriteLine(MinimumRotatedSortedArray.Run(nums,0));
