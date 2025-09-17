@@ -83,6 +83,14 @@ namespace CSharpExamples.Trees
             Console.WriteLine($"{node.Value}" + " ");
             Inorder(node.Right);
         }
+
+        public static void Postorder(BinaryTree node)
+        {
+            if (node == null) return;
+            Postorder(node.Left);
+            Postorder(node.Right);
+            Console.WriteLine($"{node.Value}" + " ");
+        }
     }
 
 
