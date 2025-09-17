@@ -7,15 +7,26 @@ namespace CSharpExamples.Trees.HeepSort
             Console.WriteLine($"Before Heaping:{string.Join(",", arr)}");
             // Heapify(arr,0,arr.Length);
             BuildHeap(arr);
+            SortHeap(arr);
             Console.WriteLine($"After Heaping:{string.Join(",", arr)}");
         }
 
         private static void BuildHeap(int[] arr)
         {
             int n = arr.Length;
-            for (int i = n - 1; i >= 0; i--)
+            for (int i = n/2 - 1; i >= 0; i--)
             {
                 Heapify(arr, i, n);
+            }
+        }
+
+        private static void SortHeap(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = n - 1; i >= 0; i--)
+            {
+                (arr[0], arr[i]) = (arr[i], arr[0]);
+                Heapify(arr, 0, i);
             }
         }
 
