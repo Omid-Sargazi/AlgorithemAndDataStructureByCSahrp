@@ -17,6 +17,8 @@ int[] arr2 = new int[] { 1, 3, -1 };
 int[] arr3 = new int[] { -1,0,1,2,-1,-4};
 // HeapSort.Run(arr2);
 
-var result = SumThree.RunSumTree(arr3);
+// var result = SumThree.RunSumTree(arr3);
 
-Console.WriteLine($"Result:{string.Join(" | ", result.Select(r => string.Join(",", r)))}");
+// Console.WriteLine($"Result:{string.Join(" | ", result.Select(r => string.Join(",", r)))}");
+
+ThreeSumStep2.Run(arr3);
