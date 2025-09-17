@@ -1,3 +1,5 @@
+using System.Data.Common;
+
 namespace CSharpExamples.Trees
 {
     public class TreeNode
@@ -90,6 +92,20 @@ namespace CSharpExamples.Trees
             Postorder(node.Left);
             Postorder(node.Right);
             Console.WriteLine($"{node.Value}" + " ");
+        }
+
+        public static void LevelOrder(BinaryTree root)
+        {
+            if (root == null) return;
+            var q = new Queue<BinaryTree>();
+            q.Enqueue(root);
+            while (q.Count > 0)
+            {
+                var cur = q.Dequeue();
+                Console.WriteLine(cur.Value + " ");
+                if (cur.Left != null) q.Enqueue(cur.Left);
+                if(cur.Right != null) q.Enqueue(cur.Right);
+            }
         }
     }
 
