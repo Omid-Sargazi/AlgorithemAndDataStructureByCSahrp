@@ -75,6 +75,14 @@ namespace CSharpExamples.Trees
             Preorder(node.Left);
             Preorder(node.Right);
         }
+
+        public static void Inorder(BinaryTree node)
+        {
+            if (node == null) return;
+            Inorder(node.Left);
+            Console.WriteLine($"{node.Value}" + " ");
+            Inorder(node.Right);
+        }
     }
 
 
