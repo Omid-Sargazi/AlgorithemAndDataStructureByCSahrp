@@ -41,5 +41,43 @@ namespace CSharpExamples.Trees
         }
     }
 
+    public class BinaryTree
+    {
+        public int Value;
+        public BinaryTree Left;
+        public BinaryTree Right;
+
+        public BinaryTree(int value)
+        {
+            Value = value;
+        }
+
+
+        public static void RunTreeNode()
+        {
+            BinaryTree root = new BinaryTree(0);
+            root.Left = new BinaryTree(1);
+            root.Right = new BinaryTree(2);
+
+            root.Left.Left = new BinaryTree(3);
+            root.Left.Right = new BinaryTree(4);
+
+            root.Right.Left = new BinaryTree(5);
+            root.Right.Right = new BinaryTree(6);
+
+            Preorder(root);
+        }
+
+        private static void Preorder(BinaryTree node)
+        {
+            if (node == null) return;
+            Console.WriteLine($"{node.Value}" + " ");
+            Preorder(node.Left);
+            Preorder(node.Right);
+        }
+    }
+
+
+
 
 }
