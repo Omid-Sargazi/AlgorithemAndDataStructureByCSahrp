@@ -23,5 +23,16 @@ int[] arr4 = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 // Console.WriteLine($"Result:{string.Join(" | ", result.Select(r => string.Join(",", r)))}");
 
 // ThreeSumStep2.Run(arr3);
-Console.WriteLine(ContainerMostWater.Run(arr4));
-Console.WriteLine(ContainerMostWater.TwoPointers(arr4));
+// Console.WriteLine(ContainerMostWater.Run(arr4));
+// Console.WriteLine(ContainerMostWater.TwoPointers(arr4));
+
+int[] arr5 = new int[] { 1, 2, 3, 4, 5 };
+int[] arr6 = new int[] { 1,1,1, 2,2,2,3, 3, 4, 5 };
+
+var res = TwoSumSortedArray.Run(arr5, 5);
+Console.WriteLine($"{string.Join(",", res)}");
+
+var len = RemoveDuplicatesSortedArray.Run(arr6);
+Console.WriteLine("Length: " + len);  // 5
+for (int k = 0; k < len; k++)
+    Console.Write(arr6[k] + " ");
