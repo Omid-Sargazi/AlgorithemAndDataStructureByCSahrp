@@ -19,5 +19,35 @@ namespace CSharpExamples.LeetCode
             return maxArea;
 
         }
+
+
+        public static int TwoPointers(int[] arr)
+        {
+            int n = arr.Length - 1;
+            int left = 0;
+            int right = n;
+            int maxArea = 0;
+
+            while (left < right)
+            {
+                int width = right - left;
+                int height = Math.Min(arr[left], arr[right]);
+                int area = width * height;
+
+                if (area > maxArea)
+                {
+                    maxArea = area;
+                }
+
+                if (arr[left] < arr[right])
+                    left = left + 1;
+                else
+                {
+                    right = right - 1;
+                }
+            }
+
+            return maxArea;
+        }
     }
 }

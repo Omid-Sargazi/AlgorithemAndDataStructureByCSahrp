@@ -24,3 +24,4 @@ int[] arr4 = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
 
 // ThreeSumStep2.Run(arr3);
 Console.WriteLine(ContainerMostWater.Run(arr4));
+Console.WriteLine(ContainerMostWater.TwoPointers(arr4));
