@@ -28,3 +28,28 @@ Console.WriteLine(sayHello(1));
 Func<int, int, string> add = (a, b) => $"Sum{a + b}";
 string res = add(5, 3);
 Console.WriteLine(res);
+var resYeiled = Yeilds.GetNumbers();
+foreach (var item in resYeiled)
+{
+    Console.WriteLine(item);
+}
+
+var res2 = Yeilds.GetData();
+foreach (var item in res2)
+{
+    Console.WriteLine(item);
+}
+
+
+var res3 = Yeilds.GetDataWithYeild();
+foreach (int i in res3)
+{
+    if (i == 100)
+    {
+        Console.WriteLine(i);
+    }
+    else
+    {
+        Console.WriteLine(".");
+    }
+}
