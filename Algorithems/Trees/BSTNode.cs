@@ -42,5 +42,27 @@ namespace Algorithems.Trees
             Console.Write(root.Value + " ");
             Inorder(root.Right);
         }
+
+        public BSTNode Delete(BSTNode root, int value)
+        {
+            if (root == null) return root;
+
+            if (value < root.Value)
+                root.Left = Delete(root.Left, value);
+            else if (value > root.Value)
+                root.Right = Delete(root.Right, value);
+
+            else
+            {
+                if (root.Left == null) return root.Right;
+                else if (root.Right == null) return root.Left;
+
+                // حالت 3: دو فرزند
+                root.Value = MinValue(root.Right);
+                root.Right = Delete(root.Right, root.Value);
+            }
+
+            return root;
+        }
     }
 }
