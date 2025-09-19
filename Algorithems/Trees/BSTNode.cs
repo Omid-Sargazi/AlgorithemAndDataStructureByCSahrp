@@ -23,5 +23,16 @@ namespace Algorithems.Trees
 
             return root;
         }
+
+        public bool Search(BSTNode root, int value)
+        {
+            if (root == null) return false;
+            if (root.Value == value) return true;
+
+            if (value < root.Value)
+                return Search(root.Left, value);
+            else
+                return Search(root.Right, value);
+        }
     }
 }
