@@ -34,5 +34,13 @@ namespace Algorithems.Trees
             else
                 return Search(root.Right, value);
         }
+
+        public void Inorder(BSTNode root)
+        {
+            if (root == null) return;
+            Inorder(root.Left);
+            Console.Write(root.Value + " ");
+            Inorder(root.Right);
+        }
     }
 }
