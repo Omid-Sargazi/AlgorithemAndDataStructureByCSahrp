@@ -16,6 +16,15 @@ var arr2 = new int[] { 1, 2, 3 };
 // Sortings.RunMergeSort(arr);
 
 // Sortings.RunHeapify(arr);
-var nums = new int[] { 4, 5, 6, 7, 0, 1, 2,3 };
+// var nums = new int[] { 4, 5, 6, 7, 0, 1, 2,3 };
 
-Console.WriteLine(MinimumRotatedSortedArray.Run(nums,0));
+// Console.WriteLine(MinimumRotatedSortedArray.Run(nums,0));
+
+Action SayHello = (() => Console.WriteLine("Hello"));
+
+Func<int, string> sayHello = ((int n) => $"Hello");
+Console.WriteLine(sayHello(1));
+
+Func<int, int, string> add = (a, b) => $"Sum{a + b}";
+string res = add(5, 3);
+Console.WriteLine(res);
