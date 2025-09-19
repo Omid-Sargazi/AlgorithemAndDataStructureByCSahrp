@@ -1,0 +1,6 @@
+@PerfPlayground_HostAddress = http://localhost:5219
+
+GET {{PerfPlayground_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
